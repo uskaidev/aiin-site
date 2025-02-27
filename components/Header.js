@@ -20,6 +20,7 @@ class Header extends HTMLElement {
                     <li class="nav-item"><a href="#services" class="nav-link">サービス</a></li>
                     <li class="nav-item"><a href="#cases" class="nav-link">導入事例</a></li>
                     <li class="nav-item"><a href="#team" class="nav-link">チーム</a></li>
+                    <li class="nav-item"><a href="#" id="logoutButton" class="nav-link">ログアウト</a></li>
                 </ul>
                 <a href="#contact" class="btn btn-primary nav-cta">
                   お問い合わせ
@@ -34,6 +35,18 @@ class Header extends HTMLElement {
         </div>
       </header>
     `;
+    
+    // ログアウト機能の追加
+    setTimeout(() => {
+      const logoutButton = document.getElementById('logoutButton');
+      if (logoutButton) {
+        logoutButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          sessionStorage.removeItem('authenticated');
+          window.location.href = 'login.html';
+        });
+      }
+    }, 0);
   }
 }
 
