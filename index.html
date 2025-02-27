@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWh - AI Innovation Node | 生成AIで新規事業開発を革新する</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSSはhead内にstyleタグで記載するか、外部ファイルとしてリンクします -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- コンポーネントの読み込み -->
+    <script src="components/Header.js"></script>
+    <script src="components/Hero.js"></script>
+    <script src="components/About.js"></script>
+    <script src="components/Benefits.js"></script>
+    <script src="components/Services.js"></script>
+    <script src="components/Cases.js"></script>
+    <script src="components/Team.js"></script>
+    <script src="components/FAQ.js"></script>
+    <script src="components/Contact.js"></script>
+    <script src="components/Footer.js"></script>
+</head>
+<body>
+    <!-- コンポーネントの使用 -->
+    <header-component></header-component>
+    <hero-component></hero-component>
+    <about-component></about-component>
+    <benefits-component></benefits-component>
+    <services-component></services-component>
+    <cases-component></cases-component>
+    <team-component></team-component>
+    <faq-component></faq-component>
+    <contact-component></contact-component>
+    <footer-component></footer-component>
+
+    <script>
+        // モバイルメニュートグル
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navList = document.getElementById('navList');
+            
+            if (navToggle && navList) {
+                navToggle.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                });
+            }
+            
+            // スクロール時のヘッダースタイル変更
+            const header = document.getElementById('header');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // FAQトグル
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isOpen = answer.style.display === 'block';
+                    
+                    answer.style.display = isOpen ? 'none' : 'block';
+                    const toggle = this.querySelector('.faq-toggle');
+                    if (toggle) {
+                        toggle.textContent = isOpen ? '+' : '-';
+                    }
+                });
+            });
+            
+            // スムーススクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // モバイルメニューを閉じる
+                        if (navList.classList.contains('active')) {
+                            navList.classList.remove('active');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
