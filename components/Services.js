@@ -35,7 +35,7 @@ class Services extends HTMLElement {
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card featured-card">
                     <div class="card-body">
                         <h3>生成AIワークショップ</h3>
                         <p>生成AIの使用方法はもちろん、「どう事業に活用するか」までを手を動かしながら学ぶ2Daysのワークショップ。すぐに業務に活かせるのが特徴です。</p>

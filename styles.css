@@ -294,13 +294,16 @@ p {
 }
 
 .card-dark {
-  background: var(--black);
+  background: linear-gradient(145deg, #111111, #1a1a1a);
   color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .card-dark h3 {
   color: var(--white);
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
 .featured-card {
@@ -308,9 +311,35 @@ p {
 }
 
 .benefit-card {
-  border-radius: 12px;
-  padding: 3rem 2rem;
+  border-radius: 16px;
+  padding: 0;
   text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card .card-body {
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.benefit-card-1 {
+  background: linear-gradient(145deg, #111111, #1a1a1a);
+}
+
+.benefit-card h3 {
+  color: var(--white);
+}
+
+.benefit-card-4 {
+  background: linear-gradient(145deg, #111111, #1a1a1a, #22201a);
+}
+
+.benefit-card p {
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .team-card {
@@ -716,11 +745,6 @@ p {
 }
 
 /* メリットセクション - 視覚的強化 */
-.benefit-card .card-body {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
 
 .benefit-card h3 {
   position: relative;
@@ -734,10 +758,11 @@ p {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
+  width: 60px;
   height: 3px;
   background: var(--gradient-bg);
   border-radius: 1.5px;
+  box-shadow: 0 2px 8px rgba(106, 69, 201, 0.3);
 }
 
 .benefit-card:nth-child(2) h3::after {

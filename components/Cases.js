@@ -13,7 +13,7 @@ class Cases extends HTMLElement {
             
             <div class="grid grid-3">
                 <div class="card card-dark">
-                    <img src="assets/images/main-image.png" alt="導入事例 1" class="case-img">
+                    <img src="assets/images/yomiko.webp" alt="株式会社読売広告社" class="case-img">
                     <div class="card-body">
                         <div class="mb-1">
                             <span class="case-tag">広告会社</span>
@@ -24,7 +24,7 @@ class Cases extends HTMLElement {
                     </div>
                 </div>
                 <div class="card card-dark">
-                    <img src="assets/images/main-image.png" alt="導入事例 2" class="case-img">
+                    <img src="assets/images/dnp.jpeg" alt="大日本印刷株式会社" class="case-img">
                     <div class="card-body">
                         <div class="mb-1">
                             <span class="case-tag">印刷会社</span>
@@ -35,7 +35,7 @@ class Cases extends HTMLElement {
                     </div>
                 </div>
                 <div class="card card-dark">
-                    <img src="assets/images/main-image.png" alt="導入事例 3" class="case-img">
+                    <img src="assets/images/asd.jpg" alt="飲料メーカー" class="case-img">
                     <div class="card-body">
                         <div class="mb-1">
                             <span class="case-tag">飲料メーカー</span>
