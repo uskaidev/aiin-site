@@ -1,0 +1,19 @@
+/* Insight エンベッドスタイル */
+/* 注: 主要なスタイルはstyles.cssに定義されています */
+
+/* note.com埋め込みスタイル */
+.insight-embed {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition-medium);
+}
+
+.insight-embed:hover {
+  transform: translateY(-5px);
+}
+
+/* note.comのiframeが適切に表示されるようにスタイル調整 */
+.note-embed {
+  border: none !important;
+  box-shadow: none !important;
+}

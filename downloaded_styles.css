@@ -658,7 +658,7 @@ p {
 .hero-insight-slides {
   position: relative;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 300px;
 }
 
 .hero-insight-slide {
@@ -677,15 +677,80 @@ p {
   visibility: visible;
 }
 
-.hero-insight-embed {
+.hero-insight-card {
+  background: var(--white);
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
   transition: var(--transition-medium);
-  background: transparent;
 }
 
-.hero-insight-embed:hover {
+.hero-insight-card:hover {
   transform: translateY(-5px);
+}
+
+.hero-insight-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--accent-burgundy);
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+}
+
+.hero-insight-image {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.hero-insight-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hero-insight-card:hover .hero-insight-image img {
+  transform: scale(1.05);
+}
+
+.hero-insight-content {
+  padding: 20px;
+}
+
+.hero-insight-title {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: var(--black);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.hero-insight-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--accent-burgundy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-insight-link:after {
+  content: '→';
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.hero-insight-link:hover:after {
+  transform: translateX(3px);
 }
 
 .hero-insight-dots {
@@ -945,14 +1010,10 @@ p {
 /* note.com埋め込み用のスタイル */
 .insight-embed {
   width: 100%;
+  height: 400px;
+  margin-bottom: 1rem;
   overflow: hidden;
-  border-radius: 8px;
-  background: transparent;
-  transition: var(--transition-medium);
-}
-
-.insight-embed:hover {
-  transform: translateY(-8px);
+  border-radius: 8px 8px 0 0;
 }
 
 /* メインバナー */
@@ -1004,6 +1065,75 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+}
+
+.insight-card {
+  background: var(--white);
+  overflow: hidden;
+  transition: var(--transition-medium);
+  height: 100%;
+  position: relative;
+  border-radius: 8px;
+}
+
+.insight-card:hover {
+  transform: translateY(-8px);
+}
+
+.insight-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.insight-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-medium);
+}
+
+.insight-card:hover .insight-image img {
+  transform: scale(1.05);
+}
+
+.insight-content {
+  padding: 2rem;
+}
+
+.insight-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--black);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.insight-text {
+  color: var(--gray-600);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.insight-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--accent-burgundy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.insight-link:after {
+  content: '→';
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.insight-link:hover:after {
+  transform: translateX(3px);
 }
 
 /* Toolboxセクション - モダン化 */

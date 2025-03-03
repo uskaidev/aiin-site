@@ -60,6 +60,12 @@ class Toolbox extends HTMLElement {
               <a href="#" class="tool-link">EXPLORE</a>
             </div>
           </div>
+          
+          <div class="mt-5 text-center">
+            <a href="#" class="btn btn-primary">
+                ツールボックスを確認 →
+            </a>
+          </div>
         </div>
       </section>
     `;

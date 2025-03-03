@@ -1,29 +1,22 @@
 class Hero extends HTMLElement {
   constructor() {
     super();
-    // 記事のURLリスト
-    this.articleUrls = [
-      'https://note.com/koike_newh/n/n584ec72e0860',
-      'https://note.com/koike_newh/n/n3f48c8ee7f35',
-      'https://note.com/nozomuiino/n/n73ee2853e6e3'
-    ];
-    
-    // 記事データを保存する配列
+    // 記事のURLとIDのマッピング
     this.articleData = [
-      { 
-        title: 'AIファーストの運用モデルへの変革', 
-        image: 'assets/images/main-image.png',
-        url: this.articleUrls[0]
+      {
+        title: 'AIファーストの運用モデルへの変革',
+        url: 'https://note.com/koike_newh/n/n584ec72e0860',
+        noteId: 'n584ec72e0860'
       },
-      { 
-        title: 'AIと人間の協働の未来', 
-        image: 'assets/images/main-image.png',
-        url: this.articleUrls[1]
+      {
+        title: 'AIと人間の協働の未来',
+        url: 'https://note.com/koike_newh/n/n3f48c8ee7f35',
+        noteId: 'n3f48c8ee7f35'
       },
-      { 
-        title: 'データ駆動型意思決定の重要性', 
-        image: 'assets/images/main-image.png',
-        url: this.articleUrls[2]
+      {
+        title: 'データ駆動型意思決定の重要性',
+        url: 'https://note.com/nozomuiino/n/n73ee2853e6e3',
+        noteId: 'n73ee2853e6e3'
       }
     ];
   }
@@ -31,44 +24,13 @@ class Hero extends HTMLElement {
   connectedCallback() {
     this.render();
     
-    // OGPデータを取得
-    this.fetchOgpData();
-  }
-  
-  // OGPデータを取得する関数
-  async fetchOgpData() {
-    try {
-      // 各記事のOGPデータを取得
-      const promises = this.articleUrls.map(async (url, index) => {
-        try {
-          const response = await fetch(`/api/ogp?url=${encodeURIComponent(url)}`);
-          if (!response.ok) {
-            throw new Error(`Failed to fetch OGP data: ${response.statusText}`);
-          }
-          
-          const data = await response.json();
-          
-          // 記事データを更新
-          if (data.title) this.articleData[index].title = data.title;
-          if (data.image) this.articleData[index].image = data.image;
-          
-          return data;
-        } catch (error) {
-          console.error(`Error fetching OGP for ${url}:`, error);
-          return null;
-        }
-      });
-      
-      // すべてのリクエストが完了するのを待つ
-      const results = await Promise.all(promises);
-      
-      // 有効なデータがあれば再レンダリング
-      if (results.some(result => result !== null)) {
-        this.render();
-        this.initInsightCarousel();
-      }
-    } catch (error) {
-      console.error('Error fetching OGP data:', error);
+    // note.comの埋め込みスクリプトを読み込む
+    if (!document.querySelector('script[src="https://note.com/scripts/embed.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://note.com/scripts/embed.js';
+      script.async = true;
+      script.charset = 'utf-8';
+      document.body.appendChild(script);
     }
   }
   
@@ -207,15 +169,11 @@ class Hero extends HTMLElement {
               ${this.articleData.map((article, index) => `
                 <!-- 記事${index + 1} -->
                 <div class="hero-insight-slide ${index === 0 ? 'active' : ''}">
-                  <div class="hero-insight-card">
-                    <div class="hero-insight-tag">記事</div>
-                    <div class="hero-insight-image">
-                      <img src="${article.image}" alt="${article.title}">
-                    </div>
-                    <div class="hero-insight-content">
-                      <h3 class="hero-insight-title">${article.title}</h3>
-                      <a href="${article.url}" target="_blank" class="hero-insight-link">続きを読む</a>
-                    </div>
+                  <div class="hero-insight-embed">
+                    <iframe class="note-embed" 
+                      src="https://note.com/embed/notes/${article.noteId}" 
+                      style="border: 0; display: block; max-width: 100%; width: 100%; padding: 0px; margin: 0px; position: static; visibility: visible;" 
+                      height="200"></iframe>
                   </div>
                 </div>
               `).join('')}

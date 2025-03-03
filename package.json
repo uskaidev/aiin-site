@@ -11,6 +11,7 @@
     "deploy": "vercel --prod"
   },
   "dependencies": {
+    "node-fetch": "^3.3.2",
     "open-graph-scraper": "^5.0.0"
   },
   "devDependencies": {
