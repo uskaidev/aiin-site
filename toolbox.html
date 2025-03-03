@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOOLBOX | NEWh - AI Innovation Node</title>
+    <!-- 認証チェックスクリプト（最初に読み込む） -->
+    <script src="auth.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="insight-hero-styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- コンポーネントの読み込み -->
+    <script src="components/Header.js"></script>
+    <script src="components/Footer.js"></script>
+    <script src="components/ToolboxDetail.js"></script>
+</head>
+<body>
+    <!-- コンポーネントの使用 -->
+    <header-component></header-component>
+    
+    <main>
+        <section class="toolbox-page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">ホーム</a> / <span>TOOLBOX</span>
+                </div>
+                
+                <div class="section-tag">RESOURCES</div>
+                <h1 class="page-title">TOOLBOX</h1>
+                <p class="section-subtitle">事業開発に活用できる生成AIを活用したツールを提供しています。ご自由にご活用ください。</p>
+                
+                <!-- ツールボックスの詳細コンポーネント -->
+                <toolbox-detail-component></toolbox-detail-component>
+            </div>
+        </section>
+    </main>
+    
+    <footer-component></footer-component>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // URLパラメータからツールIDを取得
+            const urlParams = new URLSearchParams(window.location.search);
+            const toolId = urlParams.get('tool');
+            
+            // ツールIDがある場合は詳細表示モードに切り替え
+            if (toolId) {
+                document.querySelector('.toolbox-detail').setAttribute('data-active-tool', toolId);
+                document.querySelector('.toolbox-detail').classList.add('detail-view');
+            }
+            
+            // モバイルメニュートグル
+            const navToggle = document.getElementById('navToggle');
+            const navList = document.getElementById('navList');
+            
+            if (navToggle && navList) {
+                navToggle.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                });
+            }
+            
+            // スクロール時のヘッダースタイル変更
+            const header = document.getElementById('header');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
