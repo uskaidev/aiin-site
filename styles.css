@@ -955,50 +955,7 @@ p {
   transform: translateY(-8px);
 }
 
-/* メインバナー */
-.insight-main-banner {
-  background: linear-gradient(135deg, #0047AB, #4169E1);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 3rem;
-  display: flex;
-  position: relative;
-  min-height: 300px;
-}
-
-.insight-main-content {
-  padding: 3rem;
-  color: var(--white);
-  width: 60%;
-  z-index: 2;
-}
-
-.insight-main-title {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: var(--white);
-  font-weight: 800;
-}
-
-.insight-main-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: var(--white);
-  opacity: 0.9;
-  max-width: 600px;
-}
-
-.insight-main-image {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 40%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
+/* メインバナースタイルはinsight-hero-styles.cssに移動しました */
 
 .insight-grid {
   display: grid;

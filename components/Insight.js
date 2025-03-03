@@ -43,15 +43,19 @@ class Insight extends HTMLElement {
           <h2 class="section-title section-title-left">インサイト＆ナレッジ</h2>
           <p class="section-subtitle">最新の知見と洞察を共有し、生成AIの可能性を探求します。</p>
           
-          <!-- メインバナー -->
-          <div class="insight-main-banner">
-            <div class="insight-main-content">
-              <h2 class="insight-main-title">AI戦略ガイド</h2>
-              <p class="insight-main-subtitle">模倣が困難な自律的な製品、サービス、機能、ワークフローを提供する指数関数的な成長戦略を作成します。</p>
+          <!-- メインコンテナ - グリッドレイアウト用 -->
+          <div class="insight-main-container">
+            <!-- 左側：事業開発✕生成AI実践ガイド（2カラム分） -->
+            <div class="insight-main-guide">
+              <h2 class="insight-main-title">事業開発✕生成AI実践ガイド</h2>
+              <p class="insight-main-subtitle">人間と生成AIの最適なコラボレーションを実現するための実践ガイド</p>
               <a href="#" class="btn btn-primary">コピーを入手する</a>
             </div>
-            <div class="insight-main-image">
-              <!-- 画像は仮置き -->
+            
+            <!-- 右側：システムプロンプト集（1カラム分） -->
+            <div class="insight-prompt-collection">
+              <h2 class="insight-prompt-title">事業開発のための<br>システムプロンプト集</h2>
+              <!-- 画像は後日提供されるとのこと -->
             </div>
           </div>
           
@@ -64,6 +68,10 @@ class Insight extends HTMLElement {
                   height="400"></iframe>
               </div>
             `).join('')}
+          </div>
+          
+          <div class="text-center mt-5">
+            <a href="https://note.com/newh_inc/m/m78d8ce75f8fd" class="btn btn-primary no-uppercase">noteで記事を読む →</a>
           </div>
         </div>
       </section>
