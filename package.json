@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "vercel dev",
-    "build": "echo 'Building...'",
+    "build": "echo 'Static site build complete'",
+    "vercel-build": "echo 'Static site build complete'",
     "start": "echo 'Starting...'",
     "deploy": "vercel --prod"
   },
