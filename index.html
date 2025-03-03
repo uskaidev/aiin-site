@@ -19,11 +19,11 @@
     <script src="components/Header.js"></script>
     <script src="components/Hero.js"></script>
     <script src="components/About.js"></script>
-    <script src="components/Benefits.js"></script>
     <script src="components/Services.js"></script>
     <script src="components/Cases.js"></script>
     <script src="components/Team.js"></script>
-    <script src="components/FAQ.js"></script>
+    <script src="components/Insight.js"></script>
+    <script src="components/Toolbox.js"></script>
     <script src="components/Contact.js"></script>
     <script src="components/Footer.js"></script>
 </head>
@@ -32,11 +32,11 @@
     <header-component></header-component>
     <hero-component></hero-component>
     <about-component></about-component>
-    <benefits-component></benefits-component>
     <services-component></services-component>
     <cases-component></cases-component>
     <team-component></team-component>
-    <faq-component></faq-component>
+    <insight-component></insight-component>
+    <toolbox-component></toolbox-component>
     <contact-component></contact-component>
     <footer-component></footer-component>
 
@@ -63,21 +63,6 @@
                     }
                 });
             }
-            
-            // FAQトグル
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    const isOpen = answer.style.display === 'block';
-                    
-                    answer.style.display = isOpen ? 'none' : 'block';
-                    const toggle = this.querySelector('.faq-toggle');
-                    if (toggle) {
-                        toggle.textContent = isOpen ? '+' : '-';
-                    }
-                });
-            });
             
             // スムーススクロール
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {

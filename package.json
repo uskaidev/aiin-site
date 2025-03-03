@@ -1,0 +1,22 @@
+{
+  "name": "newh-ai-innovation-node",
+  "version": "1.0.0",
+  "description": "NEWh AI Innovation Node Website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Building...'",
+    "start": "echo 'Starting...'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "open-graph-scraper": "^5.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^28.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "private": true
+}

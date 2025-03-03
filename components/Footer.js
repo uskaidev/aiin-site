@@ -10,7 +10,7 @@ class Footer extends HTMLElement {
             <div class="grid grid-3">
                 <div>
                     <h3 class="footer-title">NEWh</h3>
-                    <p>新規事業によって大企業のトランスフォーメーションを促進するデザインコンサルティング＆スタジオ</p>
+                    <p style="color: var(--gray-300); margin-bottom: 2rem;">新規事業によって大企業のトランスフォーメーションを促進するデザインコンサルティング＆スタジオ</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -32,21 +32,20 @@ class Footer extends HTMLElement {
                     </div>
                 </div>
                 <div>
-                    <h3 class="footer-title">サービス</h3>
+                    <h3 class="footer-title">SERVICES</h3>
                     <ul>
-                        <li><a href="#services" class="footer-link">新規事業AIスプリント</a></li>
-                        <li><a href="#services" class="footer-link">生成AIワークショップ</a></li>
-                        <li><a href="#services" class="footer-link">新規事業戦略の設計</a></li>
-                        <li><a href="#services" class="footer-link">新規事業開発の伴走/共創</a></li>
-                        <li><a href="#services" class="footer-link">新規事業インフラの開発</a></li>
-                        <li><a href="#services" class="footer-link">イノベーション人材育成</a></li>
+                        <li><a href="#services" class="footer-link">AI SPRINT</a></li>
+                        <li><a href="#services" class="footer-link">AI WORKSHOP</a></li>
+                        <li><a href="#services" class="footer-link">STRATEGY DESIGN</a></li>
+                        <li><a href="#services" class="footer-link">BUSINESS DEVELOPMENT</a></li>
+                        <li><a href="#services" class="footer-link">INFRASTRUCTURE</a></li>
+                        <li><a href="#services" class="footer-link">INNOVATION TRAINING</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="footer-title">お問い合わせ</h3>
-                    <p>〒100-0004<br>東京都千代田区大手町1-6-1<br>大手町ビルB1F</p>
-                    <p>Email: <a href="mailto:customer@newh.co.jp" style="color: rgba(255, 255, 255, 0.7);">customer@newh.co.jp</a></p>
-                    <p>担当: 川﨑</p>
+                    <h3 class="footer-title">CONTACT</h3>
+                    <p style="color: var(--gray-300);">〒100-0004<br>東京都千代田区大手町1-6-1<br>大手町ビルB1F</p>
+                    <p style="color: var(--gray-300);">Email: <a href="mailto:customer@newh.co.jp" style="color: var(--gray-300);">customer@newh.co.jp</a></p>
                 </div>
             </div>
             <div class="copyright">

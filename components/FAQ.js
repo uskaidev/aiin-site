@@ -5,10 +5,10 @@ class FAQ extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <section class="section section-light section-grid" id="faq">
+      <section class="section section-light" id="faq">
         <div class="container">
             <div class="section-tag">FAQ</div>
-            <h2 class="section-title section-title-left">よくある質問</h2>
+            <h2 class="section-title section-title-left">QUESTIONS</h2>
             <p class="section-subtitle">生成AIを活用した新規事業開発に関するよくある質問にお答えします。</p>
             
             <div class="faq-list">
@@ -52,7 +52,7 @@ class FAQ extends HTMLElement {
             
             <div class="mt-5 text-center">
                 <a href="#contact" class="btn btn-primary">
-                    その他の質問はこちら
+                    CONTACT US
                     <span class="btn-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -64,6 +64,27 @@ class FAQ extends HTMLElement {
         </div>
       </section>
     `;
+    
+    // FAQの開閉機能を追加
+    setTimeout(() => {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+          // 現在のアイテムの状態を切り替え
+          item.classList.toggle('active');
+          
+          // 他のアイテムを閉じる（アコーディオン動作）
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+            }
+          });
+        });
+      });
+    }, 0);
   }
 }
 
