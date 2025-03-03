@@ -16,7 +16,7 @@ class About extends HTMLElement {
                     <p>ビジネスストラテジスト、サービスデザイナー、プロジェクトマネージャーなど、多様な専門家が集結し、最新AI技術を駆使した新規事業開発支援サービスを提供いたします。</p>
                     <p>複雑化する事業環境において、生成AIの活用でより早く、より広く、より深い事業構想を実現します。生成AIと人間の最適なコラボレーションにより、革新的なビジネスを創出します。</p>
                     <div class="mt-2">
-                      <a href="#services" class="btn btn-primary">
+                      <a href="#solutions" class="btn btn-primary">
                         サービスを見る
                         <span class="btn-icon">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
