@@ -47,15 +47,20 @@ class Insight extends HTMLElement {
           <div class="insight-main-container">
             <!-- 左側：事業開発✕生成AI実践ガイド（2カラム分） -->
             <div class="insight-main-guide">
-              <h2 class="insight-main-title">事業開発✕生成AI実践ガイド</h2>
-              <p class="insight-main-subtitle">人間と生成AIの最適なコラボレーションを実現するための実践ガイド</p>
-              <a href="#" class="btn btn-primary">コピーを入手する</a>
+              <div class="insight-guide-content">
+                <h2 class="insight-guide-title">事業開発✕生成AI実践ガイド</h2>
+                <p class="insight-guide-subtitle">人間と生成AIの最適なコラボレーションを実現するための実践ガイド。新規事業開発プロセスを加速させる戦略とベストプラクティス。</p>
+                <a href="#" class="insight-guide-button">ガイドを入手する</a>
+              </div>
+              <div class="insight-guide-image-wrapper">
+                <img src="assets/images/guide.png" alt="事業開発✕生成AI実践ガイド" class="insight-guide-image">
+              </div>
             </div>
             
             <!-- 右側：システムプロンプト集（1カラム分） -->
             <div class="insight-prompt-collection">
-              <h2 class="insight-prompt-title">事業開発のための<br>システムプロンプト集</h2>
-              <!-- 画像は後日提供されるとのこと -->
+              <h2 class="insight-prompt-title">事業開発のためのシステムプロンプト集</h2>
+              <a href="#" class="insight-guide-button">プロンプトを探す</a>
             </div>
           </div>
           

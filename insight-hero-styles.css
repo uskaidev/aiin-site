@@ -1,7 +1,7 @@
 /* Insight エンベッドスタイル */
 /* 注: 主要なスタイルはstyles.cssに定義されています */
 
-/* メインコンテナ - 3カラムグリッドを作成 */
+/* メインコンテナ - グリッドレイアウト用 */
 .insight-main-container {
   display: grid;
   grid-template-columns: 2fr 1fr; /* 2:1の比率 */
@@ -11,53 +11,210 @@
 
 /* 左側：事業開発✕生成AI実践ガイド */
 .insight-main-guide {
-  background: linear-gradient(135deg, #0047AB, #4169E1);
-  border-radius: 8px;
-  padding: 3rem;
+  position: relative;
+  background: linear-gradient(135deg, #0047AB, #1E90FF);
+  border-radius: 12px;
+  padding: 4rem;
   color: var(--white);
-  min-height: 300px;
+  height: 400px; /* 高さを縮小 */
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
 }
 
-.insight-main-title {
-  font-size: 3rem;
+/* コンテンツ部分のスタイル */
+.insight-guide-content {
+  position: relative;
+  z-index: 2;
+  max-width: 50%;
+}
+
+.insight-guide-title {
+  font-size: 3.5rem;
   margin-bottom: 1.5rem;
   color: var(--white);
   font-weight: 800;
+  line-height: 1.1;
 }
 
-.insight-main-subtitle {
+.insight-guide-subtitle {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   color: var(--white);
   opacity: 0.9;
   max-width: 600px;
+  line-height: 1.6;
+}
+
+/* ボタンスタイル */
+.insight-guide-button {
+  display: inline-block;
+  background-color: var(--white);
+  color: #0047AB;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.insight-guide-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
+  color: #0047AB;
+}
+
+/* 画像ラッパーのスタイル */
+.insight-guide-image-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 90%; /* 幅を90%に設定 */
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end; /* 下揃え */
+  z-index: 1;
+}
+
+/* 画像のスタイル */
+.insight-guide-image {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin-right: 0;
+  transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(0.9); /* 画像を90%にスケール */
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
+  transition: all 0.5s ease;
+  object-fit: contain;
+  transform-origin: bottom right; /* 右下を基点に */
+}
+
+.insight-main-guide:hover .insight-guide-image {
+  transform: perspective(1000px) rotateY(-8deg) rotateX(3deg) translateZ(20px) scale(0.9);
 }
 
 /* 右側：システムプロンプト集 */
 .insight-prompt-collection {
-  background: linear-gradient(135deg, #4169E1, #0047AB);
+  background-image: url('assets/images/banner.jpg');
+  background-size: cover;
+  background-position: center;
   border-radius: 8px;
   padding: 3rem;
-  color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 300px;
+  align-items: center;
+  text-align: center;
+  height: 400px; /* 左側と同じ高さに設定 */
 }
 
 .insight-prompt-title {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--white);
+  margin-bottom: 2.5rem;
+  color: black;
   font-weight: 800;
   line-height: 1.2;
 }
 
 /* レスポンシブ対応 */
+@media (max-width: 1024px) {
+  .insight-guide-content {
+    max-width: 50%;
+  }
+  
+  .insight-guide-image-wrapper {
+    width: 70%; /* タブレット表示でも大きく表示 */
+  }
+  
+  .insight-guide-image {
+    max-width: 100%;
+    transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(0.9); /* 画像を90%にスケール */
+  }
+  
+  .insight-main-guide:hover .insight-guide-image {
+    transform: perspective(1000px) rotateY(-8deg) rotateX(3deg) translateZ(20px) scale(0.9);
+  }
+  
+  .insight-guide-title {
+    font-size: 3rem;
+  }
+}
+
 @media (max-width: 768px) {
   .insight-main-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+  
+  .insight-main-guide {
+    padding: 3rem 2rem;
+    height: auto; /* モバイルでは高さを自動調整 */
+    min-height: 400px; /* 最小高さを設定 - デスクトップと一致 */
+  }
+  
+  .insight-guide-content {
+    max-width: 100%;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .insight-guide-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .insight-guide-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto; /* 高さを自動に戻す */
+    transform: none;
+    top: auto; /* 上部位置の指定を解除 */
+    right: auto;
+    justify-content: center;
+    align-items: center; /* 中央揃えに戻す */
+  }
+  
+  .insight-guide-image {
+    max-width: 100%;
+    height: auto;
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) scale(0.9); /* 画像を90%にスケール */
+    transform-origin: bottom center; /* モバイルでは中央を基点に */
+  }
+  
+  .insight-main-guide:hover .insight-guide-image {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(3deg) translateZ(20px) scale(0.9);
+  }
+  
+  .insight-guide-title {
+    font-size: 2.5rem;
+  }
+  
+  .insight-prompt-collection {
+    height: auto; /* モバイルでは高さを自動調整 */
+    min-height: 400px; /* 最小高さを設定 - デスクトップと一致 */
+  }
+}
+
+@media (max-width: 480px) {
+  .insight-main-guide {
+    padding: 2rem 1.5rem;
+  }
+  
+  .insight-guide-title {
+    font-size: 2rem;
+  }
+  
+  .insight-guide-subtitle {
+    font-size: 1rem;
+  }
+  
+  .insight-guide-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 

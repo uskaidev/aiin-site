@@ -270,6 +270,7 @@ p {
 
 .btn-primary:hover {
   background: var(--accent-burgundy-dark);
+  color: var(--white); /* Explicitly set text color to white for better contrast */
   transform: translateY(-3px);
 }
 
@@ -303,7 +304,7 @@ p {
 
 .btn-dark:hover {
   background: var(--accent-burgundy);
-  color: var(--white);
+  color: var(--white); /* Ensure text is white for contrast against burgundy background */
   transform: translateY(-3px);
 }
 
