@@ -4,10 +4,27 @@ class Header extends HTMLElement {
   }
 
   connectedCallback() {
+    // 現在のページがindex.htmlかどうかを判定
+    const isHomePage = window.location.pathname.endsWith('index.html') || 
+                       window.location.pathname.endsWith('/') ||
+                       window.location.pathname === '';
+    
+    // リンクのプレフィックスを設定
+    const linkPrefix = isHomePage ? '#' : 'index.html#';
+    
+    // ナビゲーションリンクを生成
+    const aboutLink = `${linkPrefix}about`;
+    const servicesLink = `${linkPrefix}services`;
+    const casesLink = `${linkPrefix}cases`;
+    const teamLink = `${linkPrefix}team`;
+    const insightLink = `${linkPrefix}insight`;
+    const toolboxLink = `${linkPrefix}toolbox`;
+    const contactLink = `${linkPrefix}contact`;
+    
     this.innerHTML = `
       <header class="header dark" id="header">
         <div class="container flex flex-between flex-center">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 552.977 142.455" class="logo-svg" style="height: 40px; width: auto;">
                 <g id="レイヤー_2" data-name="レイヤー 2">
                   <g id="contents">
@@ -30,15 +47,15 @@ class Header extends HTMLElement {
                     </svg>
                 </button>
                 <ul class="nav-list" id="navList">
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="#cases" class="nav-link">Work</a></li>
-                    <li class="nav-item"><a href="#team" class="nav-link">Team</a></li>
-                    <li class="nav-item"><a href="#insight" class="nav-link">Insight</a></li>
-                    <li class="nav-item"><a href="#toolbox" class="nav-link">Tools</a></li>
+                    <li class="nav-item"><a href="${aboutLink}" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="${servicesLink}" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="${casesLink}" class="nav-link">Work</a></li>
+                    <li class="nav-item"><a href="${teamLink}" class="nav-link">Team</a></li>
+                    <li class="nav-item"><a href="${insightLink}" class="nav-link">Insight</a></li>
+                    <li class="nav-item"><a href="${toolboxLink}" class="nav-link">Tools</a></li>
                     <li class="nav-item"><a href="#" id="logoutButton" class="nav-link">Logout</a></li>
                 </ul>
-                <a href="#contact" class="btn btn-dark nav-cta">
+                <a href="${contactLink}" class="btn btn-dark nav-cta">
                   Contact
                   <span class="btn-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
