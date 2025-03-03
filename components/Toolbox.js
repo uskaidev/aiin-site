@@ -14,7 +14,7 @@ class Toolbox extends HTMLElement {
           <div class="toolbox-grid">
             <div class="tool-card animate-in animate-delay-1">
               <div class="tool-icon">
-                <i class="fas fa-robot"></i>
+                <i class="fas fa-magnifying-glass-chart"></i>
               </div>
               <h3 class="tool-title">業界トレンド調査</h3>
               <p class="tool-description">
@@ -26,7 +26,7 @@ class Toolbox extends HTMLElement {
             
             <div class="tool-card animate-in animate-delay-2">
               <div class="tool-icon">
-                <i class="fas fa-image"></i>
+                <i class="fas fa-building-shield"></i>
               </div>
               <h3 class="tool-title">競合調査</h3>
               <p class="tool-description">
@@ -38,7 +38,7 @@ class Toolbox extends HTMLElement {
             
             <div class="tool-card animate-in animate-delay-3">
               <div class="tool-icon">
-                <i class="fas fa-chart-line"></i>
+                <i class="fas fa-table-cells"></i>
               </div>
               <h3 class="tool-title">SWOT分析</h3>
               <p class="tool-description">
@@ -50,7 +50,7 @@ class Toolbox extends HTMLElement {
             
             <div class="tool-card animate-in animate-delay-4">
               <div class="tool-icon">
-                <i class="fas fa-code"></i>
+                <i class="fas fa-lightbulb"></i>
               </div>
               <h3 class="tool-title">事業コンセプト発散</h3>
               <p class="tool-description">

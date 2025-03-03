@@ -6,28 +6,28 @@ class ToolboxDetail extends HTMLElement {
         id: 'megatrend',
         title: '業界トレンド調査',
         description: '業界とエリアを入力すると、業界トレンドが生成されます。事業開発初期に業界の全体感を把握するのに最適なツールです。',
-        icon: 'fas fa-robot',
+        icon: 'fas fa-magnifying-glass-chart',
         url: 'https://udify.app/chat/iFRDkGxb63EMIXm8'
       },
       {
         id: 'competitor',
         title: '競合調査',
         description: '新規事業を検討している市場における競合を調査します。完全競合、代替競合、目的競合など様々なカテゴリの調査が可能です。',
-        icon: 'fas fa-image',
+        icon: 'fas fa-building-shield',
         url: 'https://udify.app/chat/KKPJeWGOGj2Ayjlx'
       },
       {
         id: 'swot',
         title: 'SWOT分析',
         description: '会社名と市場を入力すると、簡易のSWOT分析が提供されます。事業を検討している市場における自社の分析から戦略的な示唆が得られます。',
-        icon: 'fas fa-chart-line',
+        icon: 'fas fa-table-cells',
         url: 'https://udify.app/chat/MVi6iYS1i4a9q3A1'
       },
       {
         id: 'concept',
         title: '事業コンセプト発散',
         description: '会社名と想定顧客と課題を入力すると事業コンセプトが生成されます。さまざまな人物の発送方法からユニークはアイデアを発散します。',
-        icon: 'fas fa-code',
+        icon: 'fas fa-lightbulb',
         url: 'https://udify.app/chat/JsWCillp6JhvA7Ci'
       }
     ];
