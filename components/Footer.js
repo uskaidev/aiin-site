@@ -4,6 +4,17 @@ class Footer extends HTMLElement {
   }
 
   connectedCallback() {
+    // 現在のページがindex.htmlかどうかを判定
+    const isHomePage = window.location.pathname.endsWith('index.html') || 
+                       window.location.pathname.endsWith('/') ||
+                       window.location.pathname === '';
+    
+    // リンクのプレフィックスを設定
+    const linkPrefix = isHomePage ? '#' : 'index.html#';
+    
+    // サービスリンクを生成
+    const servicesLink = `${linkPrefix}solutions`;
+    
     this.innerHTML = `
       <footer class="footer">
         <div class="container">
@@ -34,12 +45,11 @@ class Footer extends HTMLElement {
                 <div>
                     <h3 class="footer-title">SERVICES</h3>
                     <ul>
-                        <li><a href="#services" class="footer-link">AI SPRINT</a></li>
-                        <li><a href="#services" class="footer-link">AI WORKSHOP</a></li>
-                        <li><a href="#services" class="footer-link">STRATEGY DESIGN</a></li>
-                        <li><a href="#services" class="footer-link">BUSINESS DEVELOPMENT</a></li>
-                        <li><a href="#services" class="footer-link">INFRASTRUCTURE</a></li>
-                        <li><a href="#services" class="footer-link">INNOVATION TRAINING</a></li>
+                        <li><a href="${servicesLink}" class="footer-link">Strategy</a></li>
+                        <li><a href="${servicesLink}" class="footer-link">Business Concept</a></li>
+                        <li><a href="${servicesLink}" class="footer-link">Prototype</a></li>
+                        <li><a href="${servicesLink}" class="footer-link">Workshop</a></li>
+                        <li><a href="${servicesLink}" class="footer-link">Tool Build</a></li>
                     </ul>
                 </div>
                 <div>

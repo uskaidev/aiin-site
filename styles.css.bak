@@ -270,6 +270,7 @@ p {
 
 .btn-primary:hover {
   background: var(--accent-burgundy-dark);
+  color: var(--white); /* Explicitly set text color to white for better contrast */
   transform: translateY(-3px);
 }
 
@@ -303,7 +304,7 @@ p {
 
 .btn-dark:hover {
   background: var(--accent-burgundy);
-  color: var(--white);
+  color: var(--white); /* Ensure text is white for contrast against burgundy background */
   transform: translateY(-3px);
 }
 
@@ -658,7 +659,7 @@ p {
 .hero-insight-slides {
   position: relative;
   overflow: hidden;
-  min-height: 300px;
+  min-height: 200px;
 }
 
 .hero-insight-slide {
@@ -677,80 +678,15 @@ p {
   visibility: visible;
 }
 
-.hero-insight-card {
-  background: var(--white);
+.hero-insight-embed {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
   transition: var(--transition-medium);
+  background: transparent;
 }
 
-.hero-insight-card:hover {
+.hero-insight-embed:hover {
   transform: translateY(-5px);
-}
-
-.hero-insight-tag {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: var(--accent-burgundy);
-  color: var(--white);
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  z-index: 2;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 4px;
-}
-
-.hero-insight-image {
-  position: relative;
-  height: 160px;
-  overflow: hidden;
-}
-
-.hero-insight-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.hero-insight-card:hover .hero-insight-image img {
-  transform: scale(1.05);
-}
-
-.hero-insight-content {
-  padding: 20px;
-}
-
-.hero-insight-title {
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-  color: var(--black);
-  line-height: 1.4;
-  font-weight: 600;
-}
-
-.hero-insight-link {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--accent-burgundy);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.hero-insight-link:after {
-  content: '→';
-  margin-left: 5px;
-  transition: transform 0.3s ease;
-}
-
-.hero-insight-link:hover:after {
-  transform: translateX(3px);
 }
 
 .hero-insight-dots {
@@ -940,231 +876,29 @@ p {
   background: var(--accent-burgundy);
 }
 
-/* 事例セクション - モダン化 */
-.case-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.case-img-container {
-  position: relative;
-  overflow: hidden;
-  height: 300px;
-}
-
-.case-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition-medium);
-}
-
-.case-card:hover .case-img {
-  transform: scale(1.05);
-}
-
-.case-content {
-  padding: 2rem;
-  background: var(--black);
-  color: var(--white);
-}
-
-.case-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.case-tag {
-  display: inline-block;
-  font-size: 0.7rem;
-  padding: 4px 10px;
-  background: var(--accent-burgundy);
-  color: var(--white);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 4px;
-}
-
-.case-title {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  color: var(--white);
-}
-
-.case-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--gray-300);
-}
-
-/* Insightセクション - モダン化 */
-.insight-section {
-  background-color: var(--off-white);
-}
-
-/* note.com埋め込み用のスタイル */
-.insight-embed {
-  width: 100%;
-  height: 400px;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  border-radius: 8px 8px 0 0;
-}
-
-/* メインバナー */
-.insight-main-banner {
-  background: linear-gradient(135deg, #0047AB, #4169E1);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 3rem;
-  display: flex;
-  position: relative;
-  min-height: 300px;
-}
-
-.insight-main-content {
-  padding: 3rem;
-  color: var(--white);
-  width: 60%;
-  z-index: 2;
-}
-
-.insight-main-title {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  color: var(--white);
-  font-weight: 800;
-}
-
-.insight-main-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: var(--white);
-  opacity: 0.9;
-  max-width: 600px;
-}
-
-.insight-main-image {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 40%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-
-.insight-grid {
+/* ソリューションセクション - 3x2グリッドとモーダル */
+.solutions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
-.insight-card {
+.solution-card {
   background: var(--white);
-  overflow: hidden;
-  transition: var(--transition-medium);
-  height: 100%;
-  position: relative;
   border-radius: 8px;
-}
-
-.insight-card:hover {
-  transform: translateY(-8px);
-}
-
-.insight-image {
-  width: 100%;
-  height: 240px;
-  overflow: hidden;
-  position: relative;
-}
-
-.insight-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding: 2.5rem;
   transition: var(--transition-medium);
-}
-
-.insight-card:hover .insight-image img {
-  transform: scale(1.05);
-}
-
-.insight-content {
-  padding: 2rem;
-}
-
-.insight-title {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: var(--black);
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.insight-text {
-  color: var(--gray-600);
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.insight-link {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 600;
-  color: var(--accent-burgundy);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.insight-link:after {
-  content: '→';
-  margin-left: 5px;
-  transition: transform 0.3s ease;
-}
-
-.insight-link:hover:after {
-  transform: translateX(3px);
-}
-
-/* Toolboxセクション - モダン化 */
-.toolbox-section {
-  background-color: var(--black);
-  color: var(--white);
-}
-
-.toolbox-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
-}
-
-.tool-card {
-  background: var(--white);
-  overflow: hidden;
-  transition: var(--transition-medium);
-  height: 100%;
-  padding: 3rem;
-  text-align: left;
   position: relative;
-  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
 }
 
-.tool-card:hover {
-  transform: translateY(-8px);
-  background: var(--gray-100);
-}
-
-.tool-card::before {
+.solution-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1177,408 +911,182 @@ p {
   transition: var(--transition-medium);
 }
 
-.tool-card:hover::before {
+.solution-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.solution-card:hover::before {
   transform: scaleX(1);
 }
 
-.tool-icon {
-  color: var(--accent-burgundy);
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  font-size: 2rem;
-  transition: var(--transition-fast);
-}
-
-.tool-card:hover .tool-icon {
-  transform: translateY(-5px);
-}
-
-.tool-title {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: var(--black);
-  font-weight: 700;
-}
-
-.tool-description {
-  color: var(--gray-600);
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.tool-link {
-  display: inline-flex;
-  align-items: center;
+.solution-category {
+  font-size: 0.8rem;
   font-weight: 600;
-  color: var(--accent-burgundy);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 0.9rem;
+  color: var(--accent-burgundy);
+  margin-bottom: 1.5rem;
 }
 
-.tool-link:after {
+.solution-title-small {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--gray-700);
+  line-height: 1.4;
+}
+
+.solution-subtitle-large {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--gray-800);
+  line-height: 1.2;
+}
+
+.solution-detail-btn {
+  margin-top: auto;
+  background: none;
+  border: none;
+  color: var(--accent-burgundy);
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--transition-fast);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.solution-detail-btn::after {
   content: '→';
-  margin-left: 5px;
+  margin-left: 0.5rem;
   transition: transform 0.3s ease;
 }
 
-.tool-link:hover:after {
-  transform: translateX(3px);
-}
-
-/* 数値ハイライトセクション - モダン化 */
-.highlight-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
-
-.highlight-item {
-  padding: 2.5rem;
-  position: relative;
-  transition: var(--transition-medium);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background: var(--white);
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.highlight-item:hover {
-  transform: translateY(-8px);
-}
-
-.highlight-tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  padding: 4px 10px;
-  background: var(--navy-700);
-  color: var(--white);
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 4px;
-}
-
-.highlight-number {
-  font-size: 4rem;
-  font-weight: 800;
+.solution-detail-btn:hover {
   color: var(--black);
-  margin-bottom: 1.5rem;
-  line-height: 1;
-  min-height: 4rem;
-  display: block;
 }
 
-.highlight-text {
-  font-size: 1rem;
-  color: var(--gray-600);
-  line-height: 1.6;
-  margin-top: 0.5rem;
-  flex-grow: 1;
-}
-
-/* ハイライト項目のバリエーション */
-.highlight-item-1 {
-  /* ボーダーを削除 */
-}
-
-.highlight-item-2 {
-  /* ボーダーを削除 */
-}
-
-.highlight-item-3 {
-  /* ボーダーを削除 */
-}
-
-.highlight-item-4 {
-  /* ボーダーを削除 */
-}
-
-/* フォーム - モダン化 */
-.form-group {
-  margin-bottom: 2rem;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: var(--gray-700);
-}
-
-.form-control {
-  width: 100%;
-  padding: 16px;
-  border: 1px solid var(--gray-300);
-  background: var(--white);
-  font-size: 1rem;
-  transition: var(--transition-fast);
-  border-radius: 8px;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--accent-burgundy);
-}
-
-textarea.form-control {
-  min-height: 150px;
-  resize: vertical;
-}
-
-/* フッター - モダン化 */
-.footer {
-  background: var(--black);
-  color: var(--white);
-  padding: 80px 0 30px;
-}
-
-.footer-title {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--white);
-  font-weight: 700;
-}
-
-.footer-link {
-  color: var(--gray-300);
-  transition: var(--transition-fast);
-  display: block;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.footer-link:hover {
-  color: var(--white);
+.solution-detail-btn:hover::after {
   transform: translateX(5px);
 }
 
-.social-links {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.social-link {
+/* ソリューションモーダル */
+.solution-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: var(--gray-800);
-  color: var(--white);
-  transition: var(--transition-fast);
-  border-radius: 8px;
-}
-
-.social-link:hover {
-  background: var(--accent-burgundy);
-  transform: translateY(-3px);
-}
-
-.copyright {
-  text-align: center;
-  padding-top: 30px;
-  margin-top: 50px;
-  border-top: 1px solid var(--gray-800);
-  color: var(--gray-400);
-  font-size: 0.9rem;
-}
-
-/* FAQ セクション - モダン化 */
-.faq-list {
-  margin-top: 3rem;
-}
-
-.faq-item {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid var(--gray-200);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 0;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: var(--transition-fast);
-}
-
-.faq-question:hover {
-  color: var(--accent-burgundy);
-}
-
-.faq-toggle {
-  font-size: 1.5rem;
-  transition: var(--transition-fast);
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: var(--transition-medium);
-  padding: 0 1rem 0 0;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 500px;
-  padding-bottom: 1.5rem;
-}
-
-.faq-item.active .faq-toggle {
-  transform: rotate(45deg);
-}
-
-/* アニメーション効果 */
-.animate-in {
   opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 2rem;
+}
+
+.solution-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.solution-modal-content {
+  background: var(--white);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
   transform: translateY(30px);
-  animation: fadeInUp 0.8s ease-out forwards;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: var(--shadow-xl);
 }
 
-.animate-delay-1 {
-  animation-delay: 0.1s;
+.solution-modal.active .solution-modal-content {
+  transform: translateY(0);
 }
 
-.animate-delay-2 {
-  animation-delay: 0.2s;
+.solution-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--gray-600);
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-fast);
 }
 
-.animate-delay-3 {
-  animation-delay: 0.3s;
+.solution-modal-close:hover {
+  color: var(--black);
+  transform: rotate(90deg);
 }
 
-.animate-delay-4 {
-  animation-delay: 0.4s;
+.solution-modal-body {
+  padding: 3rem;
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 1200px) {
-  .grid-4, .toolbox-grid, .highlight-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .insight-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.solution-modal-category {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--accent-burgundy);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
 }
 
-@media (max-width: 768px) {
-  .section {
-    padding: 10vh 0;
-  }
-
-  .grid-2, .grid-3, .grid-4, .insight-grid, .toolbox-grid, .highlight-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-asymmetric, .grid-asymmetric-reverse {
-    grid-template-columns: 1fr;
-  }
-  
-  /* メインバナーのレスポンシブ対応 */
-  .insight-main-banner {
-    flex-direction: column;
-    min-height: auto;
-  }
-  
-  .insight-main-content {
-    width: 100%;
-    padding: 2rem;
-  }
-  
-  .insight-main-image {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    order: -1;
-  }
-  
-  .insight-main-title {
-    font-size: 2.5rem;
-  }
-
-  .hero {
-    min-height: 100vh;
-  }
-
-  .hero-content {
-    padding: 120px 0 60px;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-list {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: var(--black);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 99;
-  }
-
-  .nav-list.active {
-    display: flex;
-  }
-
-  .nav-item {
-    margin: 1.5rem 0;
-  }
-
-  .nav-link {
-    color: var(--white);
-    font-size: 1.5rem;
-  }
-
-  .nav-cta {
-    margin: 1.5rem 0;
-  }
-  
-  .hero-insight-carousel {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    width: 100%;
-    max-width: 100%;
-    margin-top: 3rem;
-  }
+.solution-modal-title-small {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--gray-700);
+  line-height: 1.4;
 }
 
-@media (max-width: 576px) {
-  .btn-group {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-  }
-  
-  h1 {
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
-  }
-  
-  h2 {
-    font-size: clamp(2rem, 6vw, 2.5rem);
-  }
-  
-  .container {
-    padding: 0 1.5rem;
-  }
+.solution-modal-subtitle-large {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--accent-burgundy);
+  line-height: 1.1;
 }
+
+.solution-modal-section {
+  margin-bottom: 2.5rem;
+}
+
+.solution-modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.solution-modal-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--gray-800);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.solution-modal-section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 4px;
+  height: 1rem;

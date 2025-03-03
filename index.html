@@ -13,6 +13,7 @@
     <!-- CSSはhead内にstyleタグで記載するか、外部ファイルとしてリンクします -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="insight-hero-styles.css">
+    <link rel="stylesheet" href="mobile-fixes.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -20,7 +21,7 @@
     <script src="components/Header.js"></script>
     <script src="components/Hero.js"></script>
     <script src="components/About.js"></script>
-    <script src="components/Services.js"></script>
+    <script src="components/Solutions.js"></script>
     <script src="components/Cases.js"></script>
     <script src="components/Team.js"></script>
     <script src="components/Insight.js"></script>
@@ -33,7 +34,7 @@
     <header-component></header-component>
     <hero-component></hero-component>
     <about-component></about-component>
-    <services-component></services-component>
+    <solutions-component></solutions-component>
     <cases-component></cases-component>
     <team-component></team-component>
     <insight-component></insight-component>
@@ -50,6 +51,7 @@
             if (navToggle && navList) {
                 navToggle.addEventListener('click', function() {
                     navList.classList.toggle('active');
+                    document.body.classList.toggle('menu-open');
                 });
             }
             
@@ -83,6 +85,7 @@
                         // モバイルメニューを閉じる
                         if (navList.classList.contains('active')) {
                             navList.classList.remove('active');
+                            document.body.classList.remove('menu-open');
                         }
                     }
                 });
