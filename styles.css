@@ -1040,7 +1040,6 @@ p {
   align-items: center;
   font-weight: 600;
   color: var(--accent-burgundy);
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.9rem;
 }
@@ -1290,6 +1289,189 @@ textarea.form-control {
   animation-delay: 0.4s;
 }
 
+/* TOOLBOXページ専用スタイル */
+.toolbox-page {
+  padding: 120px 0 80px;
+  min-height: 100vh;
+  background-color: var(--off-white);
+}
+
+.page-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.breadcrumb {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+}
+
+.breadcrumb a {
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-burgundy);
+}
+
+/* ツールボックス詳細コンポーネント */
+.toolbox-detail {
+  margin-top: 3rem;
+  position: relative;
+}
+
+/* カードビュー */
+.toolbox-cards {
+  display: block;
+}
+
+/* 詳細ビュー（2カラムレイアウト） */
+.toolbox-detail-view {
+  display: none;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  min-height: 600px;
+}
+
+/* 詳細ビューがアクティブな場合 */
+.toolbox-detail.detail-view .toolbox-cards {
+  display: none;
+}
+
+.toolbox-detail.detail-view .toolbox-detail-view {
+  display: grid;
+}
+
+/* 左カラム：メニュー */
+.toolbox-menu {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  height: fit-content;
+}
+
+.toolbox-menu-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.back-to-cards {
+  background: none;
+  border: none;
+  color: var(--gray-700);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  transition: var(--transition-fast);
+}
+
+.back-to-cards:hover {
+  color: var(--accent-burgundy);
+}
+
+.toolbox-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toolbox-menu-item {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.toolbox-menu-item:last-child {
+  border-bottom: none;
+}
+
+.toolbox-menu-link {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  color: var(--gray-700);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  gap: 1rem;
+}
+
+.toolbox-menu-link i {
+  color: var(--accent-burgundy);
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.toolbox-menu-item.active .toolbox-menu-link {
+  background-color: var(--gray-100);
+  color: var(--accent-burgundy);
+  font-weight: 600;
+  border-left: 4px solid var(--accent-burgundy);
+  padding-left: calc(1.5rem - 4px);
+}
+
+.toolbox-menu-item:hover .toolbox-menu-link {
+  background-color: var(--gray-100);
+}
+
+/* 右カラム：コンテンツエリア */
+.toolbox-content {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  max-height: 80vh;
+}
+
+#tool-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transition: opacity 0.3s ease;
+}
+
+.loading-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--white);
+  z-index: 1;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top: 4px solid var(--accent-burgundy);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 1200px) {
   .grid-4, .toolbox-grid, .highlight-grid {
@@ -1298,6 +1480,10 @@ textarea.form-control {
   
   .insight-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .toolbox-detail-view {
+    grid-template-columns: 240px 1fr;
   }
 }
 
@@ -1312,6 +1498,14 @@ textarea.form-control {
 
   .grid-asymmetric, .grid-asymmetric-reverse {
     grid-template-columns: 1fr;
+  }
+  
+  .toolbox-detail-view {
+    grid-template-columns: 1fr;
+  }
+  
+  .toolbox-menu {
+    margin-bottom: 1.5rem;
   }
   
   /* メインバナーのレスポンシブ対応 */
