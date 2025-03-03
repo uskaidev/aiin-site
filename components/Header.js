@@ -14,7 +14,7 @@ class Header extends HTMLElement {
     
     // ナビゲーションリンクを生成
     const aboutLink = `${linkPrefix}about`;
-    const servicesLink = `${linkPrefix}services`;
+    const servicesLink = `${linkPrefix}solutions`;
     const casesLink = `${linkPrefix}cases`;
     const teamLink = `${linkPrefix}team`;
     const insightLink = `${linkPrefix}insight`;
@@ -47,13 +47,13 @@ class Header extends HTMLElement {
                     </svg>
                 </button>
                 <ul class="nav-list" id="navList">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="${aboutLink}" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="${servicesLink}" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="${casesLink}" class="nav-link">Work</a></li>
                     <li class="nav-item"><a href="${teamLink}" class="nav-link">Team</a></li>
                     <li class="nav-item"><a href="${insightLink}" class="nav-link">Insight</a></li>
                     <li class="nav-item"><a href="${toolboxLink}" class="nav-link">Tools</a></li>
-                    <li class="nav-item"><a href="#" id="logoutButton" class="nav-link">Logout</a></li>
                 </ul>
                 <a href="${contactLink}" class="btn btn-dark nav-cta">
                   Contact
@@ -69,16 +69,7 @@ class Header extends HTMLElement {
       </header>
     `;
     
-    // ログアウト機能の追加
     setTimeout(() => {
-      const logoutButton = document.getElementById('logoutButton');
-      if (logoutButton) {
-        logoutButton.addEventListener('click', (e) => {
-          e.preventDefault();
-          sessionStorage.removeItem('authenticated');
-          window.location.href = 'login.html';
-        });
-      }
       
       // モバイルメニューの開閉
       const navToggle = document.getElementById('navToggle');

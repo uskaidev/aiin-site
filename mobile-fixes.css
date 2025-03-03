@@ -1,0 +1,85 @@
+/* モバイル対応の修正 */
+
+/* 1. モバイル表示時にHero右下の記事リンクを表示する */
+@media (max-width: 768px) {
+  .hero-insight-carousel {
+    display: block;
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 3rem;
+  }
+  
+  /* 3. エキスパートエリアの氏名表示の修正 */
+  .team-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .team-role {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+  
+  .team-name {
+    font-size: 1.3rem; /* 少し小さくする */
+  }
+}
+
+/* 2. ヘッダーのコンタクトボタンとハンバーガーメニューの干渉問題の修正 */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .nav-toggle {
+    position: relative;
+    z-index: 101;
+    margin-right: 15px;
+    padding: 10px;
+    /* タッチターゲットを大きくする */
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-cta {
+    position: relative;
+    z-index: 90;
+    margin-left: 15px;
+    /* コンタクトボタンを右端に配置 */
+    margin-left: auto;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* ハンバーガーメニューとコンタクトボタンの間に十分な間隔を確保 */
+  .header .container {
+    position: relative;
+  }
+  
+  /* メニューが開いている時のコンタクトボタンを非表示 */
+  body.menu-open .nav-cta {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* iPhone 13でのハンバーガーメニューとコンタクトボタンの干渉を防ぐ */
+  .nav-toggle {
+    position: absolute;
+    right: 15px;
+    z-index: 102;
+  }
+  
+  .nav-cta {
+    position: absolute;
+    right: 70px;
+    z-index: 90;
+  }
+}
