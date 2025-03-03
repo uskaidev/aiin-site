@@ -884,6 +884,21 @@ p {
   margin-top: 3rem;
 }
 
+/* ソリューションタグ */
+.solution-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  background: var(--gray-200);
+  color: var(--accent-burgundy);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .solution-card {
   background: var(--white);
   border-radius: 8px;
@@ -1072,6 +1087,21 @@ p {
 
 .solution-modal-section:last-child {
   margin-bottom: 0;
+}
+
+/* ソリューションメリットリスト */
+.solution-benefits-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.solution-benefits-list li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  list-style-type: disc;
+  font-size: 1rem;
+  color: var(--gray-700);
 }
 
 .solution-modal-section-title {
