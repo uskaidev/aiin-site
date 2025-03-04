@@ -43,17 +43,8 @@
     <footer-component></footer-component>
 
     <script>
-        // モバイルメニュートグル
         document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('navToggle');
-            const navList = document.getElementById('navList');
-            
-            if (navToggle && navList) {
-                navToggle.addEventListener('click', function() {
-                    navList.classList.toggle('active');
-                    document.body.classList.toggle('menu-open');
-                });
-            }
+            // モバイルメニュートグルはHeader.jsコンポーネントで処理するため削除
             
             // スクロール時のヘッダースタイル変更
             const header = document.getElementById('header');
@@ -83,7 +74,8 @@
                         });
                         
                         // モバイルメニューを閉じる
-                        if (navList.classList.contains('active')) {
+                        const navList = document.getElementById('navList');
+                        if (navList && navList.classList.contains('active')) {
                             navList.classList.remove('active');
                             document.body.classList.remove('menu-open');
                         }

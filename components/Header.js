@@ -76,10 +76,27 @@ class Header extends HTMLElement {
       const navList = document.getElementById('navList');
       
       if (navToggle && navList) {
-        navToggle.addEventListener('click', () => {
+        // クリックイベントの改善
+        navToggle.addEventListener('click', function(e) {
+          // イベントの伝播を停止
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // クラスの切り替え
           navList.classList.toggle('active');
           document.body.classList.toggle('menu-open');
-        });
+          
+          // デバッグ用
+          console.log('Menu toggled', navList.classList.contains('active'));
+        }, true); // キャプチャフェーズでイベントを処理
+        
+        // タッチデバイス向けの追加対応
+        navToggle.addEventListener('touchstart', function(e) {
+          e.preventDefault();
+          navList.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
+          console.log('Touch event fired');
+        }, { passive: false });
         
         // メニュー項目をクリックしたらメニューを閉じる
         const navLinks = navList.querySelectorAll('.nav-link');

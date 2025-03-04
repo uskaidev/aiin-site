@@ -68,13 +68,13 @@
     justify-content: center;
     align-items: center;
     z-index: 100;
-    display: none; /* 初期状態では非表示 */
+    display: none !important; /* 初期状態では非表示、!importantで優先度を上げる */
   }
   
   /* メニュー展開時の挙動改善 - 両方のクラスに対応 */
   body.menu-open .nav-list,
   .nav-list.active {
-    display: flex;
+    display: flex !important; /* !importantで優先度を上げる */
   }
 }
 
