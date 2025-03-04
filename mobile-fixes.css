@@ -1,15 +1,9 @@
 /* モバイル対応の修正 */
 
-/* 1. モバイル表示時にHero右下の記事リンクを表示する */
+/* 1. モバイル表示時にHero右下の記事リンクを非表示にする */
 @media (max-width: 768px) {
   .hero-insight-carousel {
-    display: block;
-    position: relative;
-    bottom: auto;
-    right: auto;
-    width: 100%;
-    max-width: 100%;
-    margin-top: 3rem;
+    display: none; /* 完全に非表示に変更 */
   }
   
   /* 3. エキスパートエリアの氏名表示の修正 */
@@ -30,56 +24,120 @@
 
 /* 2. ヘッダーのコンタクトボタンとハンバーガーメニューの干渉問題の修正 */
 @media (max-width: 768px) {
-  .nav-menu {
+  /* ヘッダーコンテナの調整 */
+  .header .container {
     position: relative;
     justify-content: space-between;
-    width: 100%;
   }
   
+  /* ナビメニュー全体の調整 */
+  .nav-menu {
+    position: static;
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* コンタクトボタンを非表示 */
+  .nav-cta {
+    display: none;
+  }
+  
+  /* ハンバーガーメニューの位置とサイズ調整 */
   .nav-toggle {
     position: relative;
-    z-index: 101;
-    margin-right: 15px;
-    padding: 10px;
-    /* タッチターゲットを大きくする */
-    width: 44px;
-    height: 44px;
+    z-index: 102;
+    margin-left: auto; /* 右端に配置 */
+    padding: 8px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
+  /* ナビリストの調整 */
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--black);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    display: none !important; /* 初期状態では非表示、!importantで優先度を上げる */
+  }
+  
+  /* メニュー展開時の挙動改善 - 両方のクラスに対応 */
+  body.menu-open .nav-list,
+  .nav-list.active {
+    display: flex !important; /* !importantで優先度を上げる */
+  }
+}
+
+/* 3. ソリューションセクションのモバイル表示を1カラムに変更 */
+@media (max-width: 768px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* カードのパディングも調整して読みやすく */
+  .solution-card {
+    padding: 2rem;
+  }
+  
+  /* モーダル内のパディングも調整 */
+  .solution-modal-body {
+    padding: 2rem;
+  }
+  
+  /* モーダル内のタイトルサイズ調整 */
+  .solution-modal-subtitle-large {
+    font-size: 2rem;
+  }
+}
+
+/* 4. INSIGHTバナーの画像をモバイルで非表示に */
+@media (max-width: 768px) {
+  /* 画像ラッパーを非表示 */
+  .insight-guide-image-wrapper {
+    display: none;
+  }
+  
+  /* コンテンツ部分を全幅に */
+  .insight-guide-content {
+    max-width: 100%;
+    margin-bottom: 0; /* 画像がないので下マージンも不要 */
+  }
+  
+  /* バナー自体のパディングを調整 */
+  .insight-main-guide {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* iPhone固有の調整（より小さい画面向け） */
+@media (max-width: 390px) {
   .nav-cta {
-    position: relative;
-    z-index: 90;
-    margin-left: 15px;
-    /* コンタクトボタンを右端に配置 */
-    margin-left: auto;
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 6px 12px;
+    font-size: 0.75rem;
   }
   
-  /* ハンバーガーメニューとコンタクトボタンの間に十分な間隔を確保 */
-  .header .container {
-    position: relative;
-  }
-  
-  /* メニューが開いている時のコンタクトボタンを非表示 */
-  body.menu-open .nav-cta {
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  /* iPhone 13でのハンバーガーメニューとコンタクトボタンの干渉を防ぐ */
   .nav-toggle {
-    position: absolute;
-    right: 15px;
-    z-index: 102;
+    width: 36px;
+    height: 36px;
   }
   
-  .nav-cta {
-    position: absolute;
-    right: 70px;
-    z-index: 90;
+  /* ロゴのサイズ調整 */
+  .logo-svg {
+    height: 32px;
   }
 }
