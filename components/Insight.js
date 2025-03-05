@@ -57,10 +57,10 @@ class Insight extends HTMLElement {
               </div>
             </div>
             
-            <!-- 右側：システムプロンプト集（1カラム分） -->
+            <!-- 右側：システムプロンプトライブラリ（1カラム分） -->
             <div class="insight-prompt-collection">
-              <h2 class="insight-prompt-title">事業開発のためのシステムプロンプト集</h2>
-              <a href="#" class="insight-guide-button">プロンプトを探す</a>
+              <h2 class="insight-prompt-title">事業開発のためのシステムプロンプトライブラリ</h2>
+              <a href="prompt-library.html" class="insight-guide-button">プロンプトを探す</a>
             </div>
           </div>
           
