@@ -226,7 +226,24 @@ class PromptLibraryDetail extends HTMLElement {
     const promptId = urlParams.get('prompt');
     
     if (promptId) {
-      this.activatePrompt(promptId);
+      // 詳細ビューに切り替え
+      const detailContainer = this.querySelector('.prompt-library-detail');
+      if (detailContainer) {
+        detailContainer.classList.add('detail-view');
+      }
+      
+      // メニュー項目をアクティブ化
+      const menuItems = this.querySelectorAll('.prompt-library-menu-item');
+      menuItems.forEach(item => {
+        if (item.getAttribute('data-prompt-id') === promptId) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+      
+      // プロンプト詳細を取得
+      this.loadPromptDetail(promptId);
     }
     
     // 検索機能
