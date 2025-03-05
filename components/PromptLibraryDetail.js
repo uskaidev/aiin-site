@@ -14,7 +14,7 @@ class PromptLibraryDetail extends HTMLElement {
     this.searchTerm = '';
     
     // GAS WebアプリのURL
-    this.apiUrl = 'https://script.google.com/macros/s/AKfycbxJeIyDQfne_QqHNuVIbLpR1x-cQk-dIQLAwa1bNL5vUasFf1bR2G5kkzPsZbh_FCWIQQ/exec';
+    this.apiUrl = 'https://script.google.com/macros/s/AKfycbxzx39NE5YSvRzpBxQlvNPpC8acpnkkxvMgsrmjFfPp9fEJ3GmKJAdiAivTpPDNgIxOVw/exec';
   }
 
   connectedCallback() {
