@@ -39,8 +39,10 @@ class PromptLibraryDetail extends HTMLElement {
   
   // 特定のプロンプト詳細を取得
   loadPromptDetail(promptId) {
+    // IDを文字列に確実に変換
+    const idStr = String(promptId);
     const script = document.createElement('script');
-    script.src = `${this.apiUrl}?action=detail&id=${promptId}&callback=handlePromptDetail`;
+    script.src = `${this.apiUrl}?action=detail&id=${idStr}&callback=handlePromptDetail`;
     document.body.appendChild(script);
     
     // グローバルコールバック関数を定義
@@ -226,6 +228,9 @@ class PromptLibraryDetail extends HTMLElement {
     const promptId = urlParams.get('prompt');
     
     if (promptId) {
+      // IDを文字列に確実に変換
+      const idStr = String(promptId);
+      
       // 詳細ビューに切り替え
       const detailContainer = this.querySelector('.prompt-library-detail');
       if (detailContainer) {
@@ -235,7 +240,7 @@ class PromptLibraryDetail extends HTMLElement {
       // メニュー項目をアクティブ化
       const menuItems = this.querySelectorAll('.prompt-library-menu-item');
       menuItems.forEach(item => {
-        if (item.getAttribute('data-prompt-id') === promptId) {
+        if (item.getAttribute('data-prompt-id') === idStr) {
           item.classList.add('active');
         } else {
           item.classList.remove('active');
@@ -366,6 +371,9 @@ class PromptLibraryDetail extends HTMLElement {
 
   // プロンプト詳細表示の有効化
   activatePrompt(promptId) {
+    // IDを文字列に確実に変換
+    const idStr = String(promptId);
+    
     // 詳細ビューに切り替え
     const detailContainer = this.querySelector('.prompt-library-detail');
     detailContainer.classList.add('detail-view');
@@ -373,7 +381,7 @@ class PromptLibraryDetail extends HTMLElement {
     // メニュー項目をアクティブ化
     const menuItems = this.querySelectorAll('.prompt-library-menu-item');
     menuItems.forEach(item => {
-      if (item.getAttribute('data-prompt-id') === promptId) {
+      if (item.getAttribute('data-prompt-id') === idStr) {
         item.classList.add('active');
       } else {
         item.classList.remove('active');
