@@ -48,16 +48,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // URLパラメータからプロンプトIDを取得
-            const urlParams = new URLSearchParams(window.location.search);
-            const promptId = urlParams.get('prompt');
-            
-            // プロンプトIDがある場合は詳細表示モードに切り替え
-            if (promptId) {
-                document.querySelector('.prompt-library-detail').setAttribute('data-active-prompt', promptId);
-                document.querySelector('.prompt-library-detail').classList.add('detail-view');
-            }
-            
             // スクロール時のヘッダースタイル変更
             const header = document.getElementById('header');
             if (header) {
