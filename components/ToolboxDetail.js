@@ -29,6 +29,13 @@ class ToolboxDetail extends HTMLElement {
         description: '会社名と想定顧客と課題を入力すると事業コンセプトが生成されます。さまざまな人物の発送方法からユニークはアイデアを発散します。',
         icon: 'fas fa-lightbulb',
         url: 'https://udify.app/chat/JsWCillp6JhvA7Ci'
+      },
+      {
+        id: 'prompt-generator',
+        title: 'プロンプトジェネレーター',
+        description: 'AIとの対話により、最適化された新規事業開発のためのシステムプロンプトを作成します。',
+        icon: 'fas fa-wand-magic-sparkles',
+        url: 'https://udify.app/chat/9SLYXLayeNXraGDG'
       }
     ];
   }
