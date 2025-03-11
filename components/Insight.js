@@ -76,7 +76,7 @@ class Insight extends HTMLElement {
           </div>
           
           <div class="text-center mt-5">
-            <a href="https://note.com/newh_inc/m/m78d8ce75f8fd" class="btn btn-primary no-uppercase">noteで記事を読む →</a>
+            <a href="https://note.com/newh_inc/m/m78d8ce75f8fd" class="btn btn-primary no-uppercase" target="_blank">noteで記事を読む →</a>
           </div>
         </div>
       </section>

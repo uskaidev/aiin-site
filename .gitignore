@@ -32,3 +32,7 @@ yarn-error.log*
 *.sln
 *.sw?
 .vercel
+
+# Cline assistant files
+.clinerules
+/memory-bank
