@@ -1,0 +1,30 @@
+/* ===================================
+   Flexbox Utilities
+   =================================== */
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 2.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .btn-group {
+    flex-direction: column;
+  }
+}

@@ -1,13 +1,10 @@
-// auth.js - 認証状態をチェックするスクリプト
-(function() {
-    // ログインページでは認証チェックをスキップ
-    if (window.location.pathname.includes('login.html')) {
-        return;
-    }
-    
-    // 認証状態のチェック
-    if (sessionStorage.getItem('authenticated') !== 'true') {
-        // 認証されていない場合はログインページにリダイレクト
+// 認証チェック関数
+function checkAuth() {
+    const isAuthenticated = sessionStorage.getItem('isAuthenticated');
+    if (!isAuthenticated || isAuthenticated !== 'true') {
         window.location.href = 'login.html';
     }
-})();
+}
+
+// グローバルに公開
+window.checkAuth = checkAuth;

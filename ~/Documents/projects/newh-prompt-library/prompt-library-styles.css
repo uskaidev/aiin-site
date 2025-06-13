@@ -1,0 +1,317 @@
+/* プロンプトライブラリ用スタイル */
+.prompt-library-page {
+  padding: 120px 0 80px;
+  min-height: 100vh;
+  background-color: var(--off-white);
+}
+
+.prompt-library-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  position: relative;
+  width: 70%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  padding-left: 40px;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-500);
+}
+
+.category-filter {
+  width: 28%;
+}
+
+.category-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--white);
+}
+
+.prompt-library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.prompt-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: var(--transition-medium);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.prompt-icon {
+  color: var(--accent-burgundy);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prompt-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--black);
+}
+
+.prompt-description {
+  color: var(--gray-600);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.prompt-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-burgundy);
+  font-weight: 600;
+}
+
+.prompt-link:after {
+  content: '→';
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.prompt-link:hover:after {
+  transform: translateX(3px);
+}
+
+/* 詳細ビュー */
+.prompt-library-detail-view {
+  display: none;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+}
+
+.prompt-library-detail.detail-view .prompt-library-cards,
+.prompt-library-detail.detail-view .prompt-library-controls {
+  display: none;
+}
+
+.prompt-library-detail.detail-view .prompt-library-detail-view {
+  display: grid;
+}
+
+/* 左メニュー */
+.prompt-library-menu {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.prompt-library-menu-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.back-to-cards {
+  background: none;
+  border: none;
+  color: var(--gray-700);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.prompt-library-menu-item {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.prompt-library-menu-link {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  color: var(--gray-700);
+  text-decoration: none;
+  gap: 1rem;
+}
+
+.prompt-library-menu-item.active .prompt-library-menu-link {
+  background-color: var(--gray-100);
+  color: var(--accent-burgundy);
+  font-weight: 600;
+  border-left: 4px solid var(--accent-burgundy);
+  padding-left: calc(1.5rem - 4px);
+}
+
+/* 右コンテンツエリア */
+.prompt-library-content {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+}
+
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-200);
+  border-top: 4px solid var(--accent-burgundy);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.prompt-detail-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.prompt-detail-category {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--accent-burgundy);
+  color: var(--white);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.prompt-section {
+  margin-bottom: 2rem;
+}
+
+.prompt-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.prompt-text-container {
+  position: relative;
+  background: var(--gray-100);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.prompt-text {
+  white-space: pre-wrap;
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.copy-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.copy-button:hover {
+  background: var(--gray-200);
+}
+
+.output-example-container {
+  background: var(--gray-100);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.output-example h1,
+.output-example h2,
+.output-example h3,
+.output-example h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.output-example h1 {
+  font-size: 1.8rem;
+}
+
+.output-example h2 {
+  font-size: 1.5rem;
+}
+
+.output-example h3 {
+  font-size: 1.3rem;
+}
+
+.output-example h4 {
+  font-size: 1.1rem;
+}
+
+.output-example ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.output-example p {
+  margin-bottom: 1rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+  .prompt-library-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .prompt-library-controls {
+    flex-direction: column;
+  }
+  
+  .search-container,
+  .category-filter {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .prompt-library-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .prompt-library-detail-view {
+    grid-template-columns: 1fr;
+  }
+  
+  .prompt-library-menu {
+    margin-bottom: 1.5rem;
+  }
+}

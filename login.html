@@ -85,7 +85,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // すでに認証されている場合はメインページにリダイレクト
-            if (sessionStorage.getItem('authenticated') === 'true') {
+            if (sessionStorage.getItem('isAuthenticated') === 'true') {
                 window.location.href = 'index.html';
             }
             
@@ -99,7 +99,7 @@
                 // 認証情報の検証
                 if (username === 'aiin' && password === 'aiin') {
                     // 認証成功
-                    sessionStorage.setItem('authenticated', 'true');
+                    sessionStorage.setItem('isAuthenticated', 'true');
                     window.location.href = 'index.html';
                 } else {
                     // 認証失敗

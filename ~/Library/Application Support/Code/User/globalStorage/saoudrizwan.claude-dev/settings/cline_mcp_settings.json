@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "github.com/modelcontextprotocol/servers/tree/main/src/gdrive": {
+      "command": "node",
+      "args": ["/Users/koike_yusuke/Documents/Cline/MCP/gdrive-server/build/index.js"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

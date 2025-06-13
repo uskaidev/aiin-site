@@ -16,6 +16,7 @@ Thumbs.db
 # Build files
 /dist
 /build
+.vite/
 
 # Logs
 *.log
@@ -36,3 +37,6 @@ yarn-error.log*
 # Cline assistant files
 .clinerules
 /memory-bank
+
+# Public directory (generated)
+/public/assets

@@ -1,0 +1,94 @@
+/* ===================================
+   Responsive Utilities & Media Queries
+   =================================== */
+
+/* Highlight Grid */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+/* FAQ Section */
+.faq-list {
+  margin-top: 3rem;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.faq-question:hover {
+  color: var(--accent-burgundy);
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  transition: var(--transition-fast);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--transition-medium);
+  padding: 0 1rem 0 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding-bottom: 1.5rem;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+  .grid-4, .highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4, .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-asymmetric, .grid-asymmetric-reverse {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn {
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+  
+  h2 {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
