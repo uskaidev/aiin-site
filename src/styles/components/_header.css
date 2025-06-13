@@ -1,0 +1,200 @@
+/* ===================================
+   Header Component
+   =================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.header.scrolled {
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.header.dark {
+  background: rgba(10, 10, 10, 0.95);
+}
+
+.header.dark .nav-link {
+  color: var(--white);
+}
+
+.header.dark .nav-toggle {
+  color: var(--white);
+}
+
+.header.dark .logo-svg {
+  fill: var(--white);
+}
+
+/* Logo */
+.logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-svg {
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-svg {
+  transform: scale(1.05);
+}
+
+/* Navigation */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 2.5rem;
+}
+
+.nav-link {
+  color: var(--black);
+  font-weight: 500;
+  transition: var(--transition-fast);
+  padding: 8px 0;
+  position: relative;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-burgundy);
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--accent-burgundy);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-cta {
+  margin-left: 2.5rem;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  /* Header container adjustments */
+  .header .container {
+    position: relative;
+    justify-content: space-between;
+  }
+  
+  /* Navigation menu adjustments */
+  .nav-menu {
+    position: static;
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Hide contact button on mobile */
+  .nav-cta {
+    display: none;
+  }
+  
+  /* Hamburger menu position and size */
+  .nav-toggle {
+    position: relative;
+    z-index: 102;
+    margin-left: auto;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Navigation list adjustments */
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--black);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    display: none !important;
+  }
+  
+  /* Menu open behavior */
+  body.menu-open .nav-list,
+  .nav-list.active {
+    display: flex !important;
+  }
+  
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+
+  .nav-link {
+    color: var(--white);
+    font-size: 1.5rem;
+  }
+
+  .nav-cta {
+    margin: 1.5rem 0;
+  }
+}
+
+/* iPhone specific adjustments */
+@media (max-width: 390px) {
+  .nav-cta {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+  }
+  
+  /* Logo size adjustment */
+  .logo-svg {
+    height: 32px;
+  }
+}

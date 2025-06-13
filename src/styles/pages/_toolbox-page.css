@@ -1,0 +1,162 @@
+/* ===================================
+   Toolbox Page Styles
+   =================================== */
+
+.toolbox-page {
+  padding: 120px 0 80px;
+  min-height: 100vh;
+  background-color: var(--off-white);
+}
+
+.page-title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.breadcrumb {
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+}
+
+.breadcrumb a {
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-burgundy);
+}
+
+/* Toolbox Detail Component */
+.toolbox-detail {
+  margin-top: 3rem;
+  position: relative;
+}
+
+/* Card View */
+.toolbox-cards {
+  display: block;
+}
+
+/* Detail View (2-column layout) */
+.toolbox-detail-view {
+  display: none;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  min-height: 600px;
+}
+
+/* When detail view is active */
+.toolbox-detail.detail-view .toolbox-cards {
+  display: none;
+}
+
+.toolbox-detail.detail-view .toolbox-detail-view {
+  display: grid;
+}
+
+/* Left Column: Menu */
+.toolbox-menu {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  height: fit-content;
+}
+
+.toolbox-menu-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.toolbox-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toolbox-menu-item {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.toolbox-menu-item:last-child {
+  border-bottom: none;
+}
+
+.toolbox-menu-link {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  color: var(--gray-700);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  gap: 1rem;
+}
+
+.toolbox-menu-link i {
+  color: var(--accent-burgundy);
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.toolbox-menu-item.active .toolbox-menu-link {
+  background-color: var(--gray-100);
+  color: var(--accent-burgundy);
+  font-weight: 600;
+  border-left: 4px solid var(--accent-burgundy);
+  padding-left: calc(1.5rem - 4px);
+}
+
+.toolbox-menu-item:hover .toolbox-menu-link {
+  background-color: var(--gray-100);
+}
+
+/* Right Column: Content Area */
+.toolbox-content {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  max-height: 80vh;
+}
+
+#tool-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Loading animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .toolbox-detail-view {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .toolbox-detail-view {
+    grid-template-columns: 1fr;
+  }
+  
+  .toolbox-menu {
+    margin-bottom: 1.5rem;
+  }
+}

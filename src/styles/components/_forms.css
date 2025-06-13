@@ -1,0 +1,82 @@
+/* ===================================
+   Form Components
+   =================================== */
+
+/* Form Group */
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+/* Form Controls */
+.form-control {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  font-size: 1rem;
+  transition: var(--transition-fast);
+  border-radius: 8px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-burgundy);
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Search Input */
+.search-container {
+  position: relative;
+  width: 70%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  padding-left: 40px;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-500);
+}
+
+/* Category Filter */
+.category-filter {
+  width: 28%;
+}
+
+.category-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--white);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .search-container,
+  .category-filter {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

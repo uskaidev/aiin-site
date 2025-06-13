@@ -1,0 +1,61 @@
+/* ===================================
+   Footer Component
+   =================================== */
+
+.footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 80px 0 30px;
+}
+
+.footer-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.footer-link {
+  color: var(--gray-300);
+  transition: var(--transition-fast);
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.footer-link:hover {
+  color: var(--white);
+  transform: translateX(5px);
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--gray-800);
+  color: var(--white);
+  transition: var(--transition-fast);
+  border-radius: 8px;
+}
+
+.social-link:hover {
+  background: var(--accent-burgundy);
+  transform: translateY(-3px);
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 50px;
+  border-top: 1px solid var(--gray-800);
+  color: var(--gray-400);
+  font-size: 0.9rem;
+}

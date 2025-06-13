@@ -1,0 +1,148 @@
+/* ===================================
+   Modal Components
+   =================================== */
+
+/* Solution Modal */
+.solution-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 2rem;
+}
+
+.solution-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.solution-modal-content {
+  background: var(--white);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(30px);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: var(--shadow-xl);
+}
+
+.solution-modal.active .solution-modal-content {
+  transform: translateY(0);
+}
+
+.solution-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--gray-600);
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-fast);
+}
+
+.solution-modal-close:hover {
+  color: var(--black);
+  transform: rotate(90deg);
+}
+
+.solution-modal-body {
+  padding: 3rem;
+}
+
+.solution-modal-category {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--accent-burgundy);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+}
+
+.solution-modal-title-small {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--gray-700);
+  line-height: 1.4;
+}
+
+.solution-modal-subtitle-large {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--accent-burgundy);
+  line-height: 1.1;
+}
+
+.solution-modal-section {
+  margin-bottom: 2.5rem;
+}
+
+.solution-modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.solution-modal-section-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--gray-800);
+  position: relative;
+  padding-left: 1rem;
+}
+
+.solution-modal-section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 4px;
+  height: 1rem;
+  background: var(--accent-burgundy);
+}
+
+/* Solution Benefits List */
+.solution-benefits-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.solution-benefits-list li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  list-style-type: disc;
+  font-size: 1rem;
+  color: var(--gray-700);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .solution-modal-body {
+    padding: 2rem;
+  }
+  
+  .solution-modal-subtitle-large {
+    font-size: 2rem;
+  }
+}

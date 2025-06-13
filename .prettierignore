@@ -1,0 +1,70 @@
+# Build outputs
+dist/
+build/
+.vercel/
+.next/
+out/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Development
+.vite/
+*.local
+
+# Logs
+*.log
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Coverage
+coverage/
+
+# Temporary
+tmp/
+temp/
+
+# Backup files
+backup/
+temp-aiin-site/
+
+# Minified files
+*.min.js
+*.min.css
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+
+# Videos
+*.mp4
+*.webm
+*.ogg
+
+# Fonts
+*.woff
+*.woff2
+*.ttf
+*.eot
+
+# Documents
+*.pdf
+*.doc
+*.docx
+
+# Archives
+*.zip
+*.tar
+*.gz
+
+# Package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

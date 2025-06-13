@@ -1,0 +1,23 @@
+{
+  "name": "newh-prompt-library",
+  "version": "1.0.0",
+  "description": "NEWh プロンプトライブラリ - ビジネスや個人的なタスクに最適化されたAIプロンプト集",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -o",
+    "dev": "npx live-server"
+  },
+  "keywords": [
+    "prompt",
+    "library",
+    "ai",
+    "newh"
+  ],
+  "author": "NEWh",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  }
+}

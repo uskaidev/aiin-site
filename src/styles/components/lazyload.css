@@ -1,0 +1,95 @@
+/**
+ * 遅延読み込み画像用のスタイル
+ */
+
+/* 遅延読み込み前の画像スタイル */
+.lazy-image {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* 遅延読み込み完了後 */
+.lazy-image.lazy-loaded {
+  opacity: 1;
+}
+
+/* プレースホルダー背景 */
+[data-lazy] {
+  background-color: #f3f4f6;
+  background-image: linear-gradient(
+    90deg,
+    #f3f4f6 0%,
+    #e5e7eb 50%,
+    #f3f4f6 100%
+  );
+  background-size: 200% 100%;
+  animation: lazy-placeholder 1.5s ease-in-out infinite;
+}
+
+/* プレースホルダーアニメーション */
+@keyframes lazy-placeholder {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* 画像のアスペクト比を保持 */
+.lazy-aspect-ratio {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.lazy-aspect-ratio::before {
+  content: '';
+  display: block;
+  padding-top: var(--aspect-ratio, 100%);
+}
+
+.lazy-aspect-ratio img,
+.lazy-aspect-ratio [data-lazy] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 16:9アスペクト比 */
+.lazy-aspect-ratio-16-9::before {
+  padding-top: 56.25%;
+}
+
+/* 4:3アスペクト比 */
+.lazy-aspect-ratio-4-3::before {
+  padding-top: 75%;
+}
+
+/* 1:1アスペクト比 */
+.lazy-aspect-ratio-1-1::before {
+  padding-top: 100%;
+}
+
+/* エラー時のスタイル */
+[data-lazy-error] {
+  background-color: #fee;
+  background-image: none;
+  animation: none;
+  position: relative;
+}
+
+[data-lazy-error]::after {
+  content: '画像を読み込めませんでした';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #dc2626;
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 0.5rem;
+}

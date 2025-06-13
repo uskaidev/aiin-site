@@ -1,0 +1,253 @@
+/* ===================================
+   Insight Component
+   =================================== */
+
+.insight-section {
+  background-color: var(--off-white);
+}
+
+/* note.com embed styles */
+.insight-embed {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: transparent;
+  transition: var(--transition-medium);
+}
+
+.insight-embed:hover {
+  transform: translateY(-8px);
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Main container - Grid layout */
+.insight-main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Left side: Business Development × AI Guide */
+.insight-main-guide {
+  position: relative;
+  background: linear-gradient(135deg, #0047AB, #1E90FF);
+  border-radius: 12px;
+  padding: 4rem;
+  color: var(--white);
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+/* Content section styles */
+.insight-guide-content {
+  position: relative;
+  z-index: 2;
+  max-width: 50%;
+}
+
+.insight-guide-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.insight-guide-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: var(--white);
+  opacity: 0.9;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Button styles */
+.insight-guide-button {
+  display: inline-block;
+  background-color: var(--white);
+  color: #0047AB;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.insight-guide-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f8f9fa;
+  color: #0047AB;
+}
+
+/* Image wrapper styles */
+.insight-guide-image-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+/* Image styles */
+.insight-guide-image {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin-right: 0;
+  transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(0.9);
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.2));
+  transition: all 0.5s ease;
+  object-fit: contain;
+  transform-origin: bottom right;
+}
+
+.insight-main-guide:hover .insight-guide-image {
+  transform: perspective(1000px) rotateY(-8deg) rotateX(3deg) translateZ(20px) scale(0.9);
+}
+
+/* Right side: System Prompt Collection */
+.insight-prompt-collection {
+  background-image: url('assets/images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+}
+
+.insight-prompt-title {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: black;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* note.com iframe styles */
+.note-embed {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Lowercase for note platform name */
+.no-uppercase {
+  text-transform: none !important;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .insight-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .insight-guide-content {
+    max-width: 50%;
+  }
+  
+  .insight-guide-image-wrapper {
+    width: 70%;
+  }
+  
+  .insight-guide-image {
+    max-width: 100%;
+    transform: perspective(1000px) rotateY(-10deg) rotateX(5deg) scale(0.9);
+  }
+  
+  .insight-main-guide:hover .insight-guide-image {
+    transform: perspective(1000px) rotateY(-8deg) rotateX(3deg) translateZ(20px) scale(0.9);
+  }
+  
+  .insight-guide-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .insight-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .insight-main-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .insight-main-guide {
+    padding: 3rem 2rem;
+    height: auto;
+    min-height: 400px;
+  }
+  
+  .insight-guide-content {
+    max-width: 100%;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .insight-guide-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Hide image wrapper on mobile */
+  .insight-guide-image-wrapper {
+    display: none;
+  }
+  
+  /* Center content on mobile */
+  .insight-main-guide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .insight-guide-title {
+    font-size: 2.5rem;
+  }
+  
+  .insight-prompt-collection {
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .insight-main-guide {
+    padding: 2rem 1.5rem;
+  }
+  
+  .insight-guide-title {
+    font-size: 2rem;
+  }
+  
+  .insight-guide-subtitle {
+    font-size: 1rem;
+  }
+  
+  .insight-guide-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
