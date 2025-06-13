@@ -14,8 +14,10 @@ class PromptLibraryDetail extends HTMLElement {
     this.searchTerm = '';
     
     // APIエンドポイントのURL
-    // 開発環境では直接GASにアクセス、本番環境ではVercel Functionを使用
-    this.apiUrl = window.location.hostname === 'localhost' 
+    // 開発環境とプレビュー環境では直接GASにアクセス、本番環境ではVercel Functionを使用
+    const isLocalOrPreview = window.location.hostname === 'localhost' || 
+                            window.location.hostname.includes('vercel.app');
+    this.apiUrl = isLocalOrPreview
       ? 'https://script.google.com/macros/s/AKfycbxDe5yTUmo88fCVOBwceOFDHrQACqL6lFdyhEHfddW3Fi8fRuMz6s-IAcn84moYoyy2/exec'
       : '/api/prompts';
   }
@@ -27,8 +29,10 @@ class PromptLibraryDetail extends HTMLElement {
   // APIからプロンプト一覧を取得
   async loadPrompts() {
     try {
-      // 開発環境ではJSONPを使用
-      if (window.location.hostname === 'localhost') {
+      // 開発環境とプレビュー環境ではJSONPを使用
+      const isLocalOrPreview = window.location.hostname === 'localhost' || 
+                              window.location.hostname.includes('vercel.app');
+      if (isLocalOrPreview) {
         await this.loadPromptsViaJSONP();
       } else {
         // 本番環境では通常のfetch
@@ -76,8 +80,10 @@ class PromptLibraryDetail extends HTMLElement {
       // IDを文字列に確実に変換
       const idStr = String(promptId);
       
-      // 開発環境ではJSONPを使用
-      if (window.location.hostname === 'localhost') {
+      // 開発環境とプレビュー環境ではJSONPを使用
+      const isLocalOrPreview = window.location.hostname === 'localhost' || 
+                              window.location.hostname.includes('vercel.app');
+      if (isLocalOrPreview) {
         await this.loadPromptDetailViaJSONP(idStr);
       } else {
         // 本番環境では通常のfetch
